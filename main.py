@@ -10,6 +10,7 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 
 app = dash.Dash(__name__)
+app.title = 'Craft Beer visualization'
 server = app.server
 
 # ------------------------------------------------------------------------------
