@@ -1,0 +1,143 @@
+,Country,continent,Country ID,iso_num
+11,Afghanistan,Asia,AFG,4
+23,Albania,Europe,ALB,8
+35,Algeria,Africa,DZA,12
+47,Angola,Africa,AGO,24
+59,Argentina,Americas,ARG,32
+71,Australia,Oceania,AUS,36
+83,Austria,Europe,AUT,40
+95,Bahrain,Asia,BHR,48
+107,Bangladesh,Asia,BGD,50
+119,Belgium,Europe,BEL,56
+131,Benin,Africa,BEN,204
+143,Bolivia,Americas,BOL,68
+155,Bosnia and Herzegovina,Europe,BIH,70
+167,Botswana,Africa,BWA,72
+179,Brazil,Americas,BRA,76
+191,Bulgaria,Europe,BGR,100
+203,Burkina Faso,Africa,BFA,854
+215,Burundi,Africa,BDI,108
+227,Cambodia,Asia,KHM,116
+239,Cameroon,Africa,CMR,120
+251,Canada,Americas,CAN,124
+263,Central African Republic,Africa,CAF,140
+275,Chad,Africa,TCD,148
+287,Chile,Americas,CHL,152
+299,China,Asia,CHN,156
+311,Colombia,Americas,COL,170
+323,Comoros,Africa,COM,174
+335,"Congo, Dem. Rep.",Africa,COD,180
+347,"Congo, Rep.",Africa,COG,178
+359,Costa Rica,Americas,CRI,188
+371,Cote d'Ivoire,Africa,CIV,384
+383,Croatia,Europe,HRV,191
+395,Cuba,Americas,CUB,192
+407,Czech Republic,Europe,CZE,203
+419,Denmark,Europe,DNK,208
+431,Djibouti,Africa,DJI,262
+443,Dominican Republic,Americas,DOM,214
+455,Ecuador,Americas,ECU,218
+467,Egypt,Africa,EGY,818
+479,El Salvador,Americas,SLV,222
+491,Equatorial Guinea,Africa,GNQ,226
+503,Eritrea,Africa,ERI,232
+515,Ethiopia,Africa,ETH,231
+527,Finland,Europe,FIN,246
+539,France,Europe,FRA,250
+551,Gabon,Africa,GAB,266
+563,Gambia,Africa,GMB,270
+575,Germany,Europe,DEU,276
+587,Ghana,Africa,GHA,288
+599,Greece,Europe,GRC,300
+611,Guatemala,Americas,GTM,320
+623,Guinea,Africa,GIN,324
+635,Guinea-Bissau,Africa,GNB,624
+647,Haiti,Americas,HTI,332
+659,Honduras,Americas,HND,340
+671,"Hong Kong, China",Asia,HKG,344
+683,Hungary,Europe,HUN,348
+695,Iceland,Europe,ISL,352
+707,India,Asia,IND,356
+719,Indonesia,Asia,IDN,360
+731,Iran,Asia,IRN,364
+743,Iraq,Asia,IRQ,368
+755,Ireland,Europe,IRL,372
+767,Israel,Asia,ISR,376
+779,Italy,Europe,ITA,380
+791,Jamaica,Americas,JAM,388
+803,Japan,Asia,JPN,392
+815,Jordan,Asia,JOR,400
+827,Kenya,Africa,KEN,404
+839,"Korea, Dem. Rep.",Asia,KOR,410
+851,"Korea, Rep.",Asia,KOR,410
+863,Kuwait,Asia,KWT,414
+875,Lebanon,Asia,LBN,422
+887,Lesotho,Africa,LSO,426
+899,Liberia,Africa,LBR,430
+911,Libya,Africa,LBY,434
+923,Madagascar,Africa,MDG,450
+935,Malawi,Africa,MWI,454
+947,Malaysia,Asia,MYS,458
+959,Mali,Africa,MLI,466
+971,Mauritania,Africa,MRT,478
+983,Mauritius,Africa,MUS,480
+995,Mexico,Americas,MEX,484
+1007,Mongolia,Asia,MNG,496
+1019,Montenegro,Europe,MNE,499
+1031,Morocco,Africa,MAR,504
+1043,Mozambique,Africa,MOZ,508
+1055,Myanmar,Asia,MMR,104
+1067,Namibia,Africa,NAM,516
+1079,Nepal,Asia,NPL,524
+1091,Netherlands,Europe,NLD,528
+1103,New Zealand,Oceania,NZL,554
+1115,Nicaragua,Americas,NIC,558
+1127,Niger,Africa,NER,562
+1139,Nigeria,Africa,NGA,566
+1151,Norway,Europe,NOR,578
+1163,Oman,Asia,OMN,512
+1175,Pakistan,Asia,PAK,586
+1187,Panama,Americas,PAN,591
+1199,Paraguay,Americas,PRY,600
+1211,Peru,Americas,PER,604
+1223,Philippines,Asia,PHL,608
+1235,Poland,Europe,POL,616
+1247,Portugal,Europe,PRT,620
+1259,Puerto Rico,Americas,PRI,630
+1271,Reunion,Africa,REU,638
+1283,Romania,Europe,ROU,642
+1295,Rwanda,Africa,RWA,646
+1307,Sao Tome and Principe,Africa,STP,678
+1319,Saudi Arabia,Asia,SAU,682
+1331,Senegal,Africa,SEN,686
+1343,Serbia,Europe,SRB,688
+1355,Sierra Leone,Africa,SLE,694
+1367,Singapore,Asia,SGP,702
+1379,Slovak Republic,Europe,SVK,703
+1391,Slovenia,Europe,SVN,705
+1403,Somalia,Africa,SOM,706
+1415,South Africa,Africa,ZAF,710
+1427,Spain,Europe,ESP,724
+1439,Sri Lanka,Asia,LKA,144
+1451,Sudan,Africa,SDN,736
+1463,Swaziland,Africa,SWZ,748
+1475,Sweden,Europe,SWE,752
+1487,Switzerland,Europe,CHE,756
+1499,Syria,Asia,SYR,760
+1511,Taiwan,Asia,TWN,158
+1523,Tanzania,Africa,TZA,834
+1535,Thailand,Asia,THA,764
+1547,Togo,Africa,TGO,768
+1559,Trinidad and Tobago,Americas,TTO,780
+1571,Tunisia,Africa,TUN,788
+1583,Turkey,Europe,TUR,792
+1595,Uganda,Africa,UGA,800
+1607,United Kingdom,Europe,GBR,826
+1619,United States,Americas,USA,840
+1631,Uruguay,Americas,URY,858
+1643,Venezuela,Americas,VEN,862
+1655,Vietnam,Asia,VNM,704
+1667,West Bank and Gaza,Asia,PSE,275
+1679,"Yemen, Rep.",Asia,YEM,887
+1691,Zambia,Africa,ZMB,894
+1703,Zimbabwe,Africa,ZWE,716
