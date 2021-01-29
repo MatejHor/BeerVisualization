@@ -136,8 +136,8 @@ def write_graph(click_data, page_current, page_size, sort_by, country, brewer):
         table_data = table_data.drop(columns=['Ale', 'index', 'State', 'Type'])
 
         origin_country = table_data.groupby('Country').size()
-        origin_country["United States"] = origin_country[
-                                              "United States"] * 0.10 if 'United States' in origin_country else 0
+        origin_country["United States"] = round(origin_country[
+                                                    "United States"] * 0.10) if 'United States' in origin_country else 0
 
         map_data['Created Beer'] = map_data['Country'].apply(
             lambda x: origin_country[x] if x in origin_country.index else 0)
