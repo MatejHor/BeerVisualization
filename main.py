@@ -48,13 +48,31 @@ app.layout = html.Div([
         dcc.Graph(id='tree_map', figure=treemap),
     ]),
 
-
     html.Div(id='output_container2', style={'display': 'flex'}, children=[
         html.Div(id='output_container_map', style={'width': '50%'}, children=[
             html.H1("Origin of the beers", style={'text-align': 'center'}),
             dcc.Graph(id='chore_map', figure=chore_map)]),
         html.Div(id='output_container_table', style={'width': '50%'}, children=[
             html.H1("Beers detail", style={'text-align': 'center'}),
+            html.Div(id='output_container_inputs', style={'width': '100%'}, children=[
+                # dcc.Input(id="beer_type", type="text", placeholder="Type to find specific beer"),
+                dcc.Dropdown(
+                    id='country-dropdown',
+                    style={'width': '100%'},
+                    options=[{'label': country, 'value': country} for country in
+                             TABLE_DATA.groupby('Country').size().index],
+                    value=None,
+                    placeholder="Country to search",
+                ),
+                dcc.Dropdown(
+                    id='brewers-dropdown',
+                    style={'width': '100%'},
+                    options=[{'label': country, 'value': country} for country in
+                             TABLE_DATA.groupby('Brewer').size().index],
+                    value=None,
+                    placeholder="Brewer to search",
+                )
+            ]),
             dash_table.DataTable(
                 id='table',
                 columns=[{"name": i, "id": i} for i in TABLE_DATA.columns],
@@ -64,8 +82,10 @@ app.layout = html.Div([
                 sort_action='custom',
                 sort_mode='single',
                 sort_by=[],
-                style_cell={'textAlign': 'center'}
-            )]),
+                style_cell={'textAlign': 'center'},
+            ),
+
+        ]),
     ]),
 ])
 
@@ -75,22 +95,27 @@ app.layout = html.Div([
 @app.callback(
     [
         Output(component_id='chore_map', component_property='figure'),
+        Output(component_id='country-dropdown', component_property='options'),
+        Output(component_id='brewers-dropdown', component_property='options'),
         Output(component_id='table', component_property='data'),
     ],
     [
         Input(component_id='tree_map', component_property='clickData'),
         Input(component_id='table', component_property="page_current"),
         Input(component_id='table', component_property="page_size"),
-        Input(component_id='table', component_property='sort_by')
+        Input(component_id='table', component_property='sort_by'),
+        Input(component_id='country-dropdown', component_property='value'),
+        Input(component_id='brewers-dropdown', component_property='value'),
     ]
 )
-def write_graph(click_data, page_current, page_size, sort_by):
+def write_graph(click_data, page_current, page_size, sort_by, country, brewer):
     table_data = df
     maps = chore_map
     map_data = MAP_DATA
 
     if click_data:
-        label = click_data['points'][0]['id'].split('/') if 'id' in click_data['points'][0].keys() else []
+        label = click_data['points'][0]['id'].split('/') if click_data and 'id' in click_data['points'][
+            0].keys() else []
 
         # Compare if LAST_LABEL is not the same as actual label
         # if "/".join(label) == "/".join(last_label):
@@ -111,7 +136,8 @@ def write_graph(click_data, page_current, page_size, sort_by):
         table_data = table_data.drop(columns=['Ale', 'index', 'State', 'Type'])
 
         origin_country = table_data.groupby('Country').size()
-        origin_country["United States"] = origin_country["United States"] * 0.10
+        origin_country["United States"] = origin_country[
+                                              "United States"] * 0.10 if 'United States' in origin_country else 0
 
         map_data['Created Beer'] = map_data['Country'].apply(
             lambda x: origin_country[x] if x in origin_country.index else 0)
@@ -122,6 +148,14 @@ def write_graph(click_data, page_current, page_size, sort_by):
                              hover_name="Country",
                              color_continuous_scale='sunsetdark')
 
+    if country:
+        table_data = table_data[table_data['Country'] == country]
+    country_label = [{'label': country, 'value': country} for country in table_data.groupby('Country').size().index]
+
+    if brewer:
+        table_data = table_data[table_data['Brewer'] == brewer]
+    brewer_label = [{'label': brewer, 'value': brewer} for brewer in table_data.groupby('Brewer').size().index]
+
     if len(sort_by):
         table_data = table_data.sort_values(
             sort_by[0]['column_id'],
@@ -131,9 +165,9 @@ def write_graph(click_data, page_current, page_size, sort_by):
     else:
         table_data = table_data
 
-    return maps, table_data.iloc[
-                 page_current * page_size:(page_current + 1) * page_size
-                 ].to_dict('records')
+    return maps, country_label, brewer_label, table_data.iloc[
+                                              page_current * page_size:(page_current + 1) * page_size
+                                              ].to_dict('records')
 
 
 # ------------------------------------------------------------------------------
