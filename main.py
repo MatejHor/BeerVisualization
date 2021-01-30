@@ -21,7 +21,7 @@ df.reset_index(inplace=True)
 df_map = pd.read_csv('data/map_data.csv', index_col=0)
 df_map.reset_index(drop=True)
 
-TABLE_DATA = df.drop(columns=['Ale', 'index', 'State', 'Type'])
+TABLE_DATA = df.drop(columns=['Ale', 'index', 'State', 'Type', 'level_0'])
 MAP_DATA = df_map
 PAGE_SIZE = 10
 
